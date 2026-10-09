@@ -6,12 +6,12 @@
 // 다른 사람과는 공유되지 않아요. 구조와 화면을 미리 확인하는 용도입니다.
 
 export const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT",
-  storageBucket: "YOUR_PROJECT.firebasestorage.app",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID",
+  apiKey: "AIzaSyBTWxHf4ic3xedDLntzEHX6d7TdAN37790",
+  authDomain: "bookshelf-8a889.firebaseapp.com",
+  projectId: "bookshelf-8a889",
+  storageBucket: "bookshelf-8a889.firebasestorage.app",
+  messagingSenderId: "772200477838",
+  appId: "1:772200477838:web:749d9e65368225d54d85df",
 };
 
 export const isFirebaseConfigured =

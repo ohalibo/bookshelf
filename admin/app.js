@@ -3,7 +3,7 @@ import { COVER_MAX_WIDTH, COVER_JPEG_QUALITY, MAX_COVER_BASE64, DEFAULT_COVER_CO
 
 // ⚠️ 배포 전에 아래 문구를 꼭 바꾸세요. 이 파일은 브라우저에 그대로 내려가므로
 // "아무나 못 찾는 주소 + 이 암호" 조합일 뿐, 완전한 보안은 아니에요.
-const ADMIN_PASSCODE = "book";
+const ADMIN_PASSCODE = "granite-violet-cedar-45";
 const SESSION_KEY = "bookshelf_admin_session";
 
 const TABS = [

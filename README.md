@@ -13,9 +13,8 @@
 
 - 로컬에서 바로 열어보려면: `python3 -m http.server 8000` 실행 후
   `http://localhost:8000` 접속 (file:// 로 직접 열면 모듈 로드가 막힐 수 있어요)
-- 책을 추가/수정하려면 `http://localhost:8000/admin/` 접속 (데모 모드 암호:
-  `book`, 배포 전에 꼭 바꾸세요 — `admin/app.js` 맨 위
-  `ADMIN_PASSCODE`)
+- 책을 추가/수정하려면 `http://localhost:8000/admin/` 접속 (암호는
+  `admin/app.js` 맨 위 `ADMIN_PASSCODE`에 설정돼 있어요 — 운영진만 공유)
 
 실제로 여러 명이 각자 브라우저에서 접속해 같은 책장을 보게 하려면 아래
 순서대로 Firebase를 딱 한 번만 연결하면 됩니다. **완전 무료(Spark 요금제)**로
