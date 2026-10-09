@@ -8,6 +8,7 @@ let store = null;
 let books = [];
 let booksLoaded = false;
 let members = [];
+let membersLoaded = false;
 let session = loadSession();
 
 let entryUnsub = null;
@@ -41,6 +42,7 @@ async function init() {
   });
   store.subscribeMembers((list) => {
     members = list;
+    membersLoaded = true;
   });
   store.subscribeAllComments((list) => {
     allComments = list;
@@ -284,7 +286,7 @@ function wireGate() {
   const input = document.getElementById("pin-input");
   if (!input) return;
   input.focus();
-  document.getElementById("pin-form").addEventListener("submit", async (e) => {
+  document.getElementById("pin-form").addEventListener("submit", (e) => {
     e.preventDefault();
     const pin = input.value.trim();
     const errorEl = document.getElementById("pin-error");
@@ -292,7 +294,11 @@ function wireGate() {
       errorEl.textContent = "숫자 4자리를 입력해주세요.";
       return;
     }
-    const match = await store.verifyPin(pin);
+    if (!membersLoaded) {
+      errorEl.textContent = "회원 정보를 불러오는 중이에요. 잠시 후 다시 시도해주세요.";
+      return;
+    }
+    const match = members.find((m) => m.pin === pin);
     if (!match) {
       errorEl.textContent = "등록되지 않은 번호예요. 운영진에게 문의해주세요.";
       input.value = "";

@@ -181,11 +181,6 @@ function createLocalStore() {
       notifyMembers();
     },
 
-    async verifyPin(pin) {
-      const data = load();
-      return data.members.find((m) => m.pin === pin) || null;
-    },
-
     // ---- entries (책별 개인 독후감) ----
     subscribeEntry(bookId, person, cb) {
       const id = entryId(bookId, person);
@@ -372,13 +367,6 @@ async function createFirestoreStore() {
 
     async deleteMember(id) {
       await deleteDoc(doc(db, "members", id));
-    },
-
-    async verifyPin(pin) {
-      const snap = await getDocs(query(membersCol, where("pin", "==", pin), limit(1)));
-      if (snap.empty) return null;
-      const d = snap.docs[0];
-      return { id: d.id, ...d.data() };
     },
 
     // ---- entries (책별 개인 독후감) ----
