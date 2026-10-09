@@ -219,11 +219,11 @@ function renderBookEditor() {
   el.innerHTML = `
     <div class="field">
       <label>작성자</label>
-      <input type="text" id="f-author" value="${esc(bookDraft.author)}" placeholder="예: 김영서" />
+      <input type="text" id="f-author" value="${esc(bookDraft.author)}" placeholder="예: 무라카미 하루키" />
     </div>
     <div class="field">
       <label>책 제목</label>
-      <input type="text" id="f-title" value="${esc(bookDraft.title)}" placeholder="예: 서른의 기록" />
+      <input type="text" id="f-title" value="${esc(bookDraft.title)}" placeholder="예: 노르웨이의 숲" />
     </div>
     <div class="field">
       <label>태그 (볼륨 표시)</label>
@@ -461,7 +461,7 @@ function renderMemberEditor() {
   el.innerHTML = `
     <div class="field">
       <label>이름</label>
-      <input type="text" id="f-name" value="${esc(memberDraft.name)}" placeholder="예: 김영서" />
+      <input type="text" id="f-name" value="${esc(memberDraft.name)}" placeholder="예: 남현아" />
     </div>
     <div class="field">
       <label>로그인 번호 (4자리 숫자)</label>
