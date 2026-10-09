@@ -83,16 +83,6 @@ button { font-family: inherit; }
 
 .nav-link.active { opacity: 1; }
 
-.nav-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent-orange);
-  opacity: 0;
-}
-
-.nav-link.active .nav-dot { opacity: 1; }
-
 .session-bar {
   display: flex;
   align-items: center;
@@ -171,19 +161,24 @@ button { font-family: inherit; }
 
 .book-card-head {
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  font-size: 11px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
 }
 
-.book-author { font-weight: 700; }
+.book-title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
 
-.book-subtitle {
-  text-align: right;
+.book-author {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   color: var(--muted);
-  max-width: 55%;
 }
 
 .book-cover {

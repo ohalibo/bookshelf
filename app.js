@@ -4,11 +4,6 @@ const COMMENTS_DIGEST_MAX_AGE_MS = 10 * 24 * 60 * 60 * 1000;
 
 const SESSION_KEY = "bookshelf_session";
 
-const ROUTE_LABELS = {
-  about: "소개",
-  collected: "모아보기",
-};
-
 let store = null;
 let books = [];
 let booksLoaded = false;
@@ -400,8 +395,8 @@ function bookCardsHtml(list, linkPrefix) {
   return list.map((book) => `
     <a href="#${linkPrefix}/${book.id}" class="book-card">
       <div class="book-card-head">
+        <span class="book-title">${esc(book.title)}</span>
         <span class="book-author">${esc(book.author)}</span>
-        <span class="book-subtitle">${esc(book.title)}</span>
       </div>
       <div class="book-cover">${renderCover(book)}</div>
       <div class="book-card-foot">
@@ -812,18 +807,6 @@ function renderEntryList(bookId, entries) {
   });
 }
 
-// ---------------------------------------------------------------------------
-// 그 외 placeholder 페이지
-// ---------------------------------------------------------------------------
-function renderPlaceholder(label) {
-  return `
-    <div class="page-placeholder">
-      <h1>${label}</h1>
-      <p>아직 준비 중인 페이지입니다.</p>
-    </div>
-  `;
-}
-
 function updateNavActive(route) {
   document.querySelectorAll(".nav-link").forEach((link) => {
     link.classList.toggle("active", link.dataset.route === route);
@@ -899,14 +882,6 @@ function router() {
       entryMode = currentEntryContent ? "view" : "edit";
       rerenderEntryBlock();
     });
-  } else if (path === "/about") {
-    cleanupSubscriptions();
-    view.innerHTML = renderPlaceholder(ROUTE_LABELS.about);
-    updateNavActive("about");
-  } else if (path === "/collected") {
-    cleanupSubscriptions();
-    view.innerHTML = renderPlaceholder(ROUTE_LABELS.collected);
-    updateNavActive("collected");
   } else {
     cleanupSubscriptions();
     view.innerHTML = renderShelf();
