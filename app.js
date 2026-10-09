@@ -269,7 +269,7 @@ function renderGate() {
     <div class="gate-wrap">
       <div class="gate-card">
         <p class="gate-kicker">Welcome</p>
-        <h1>책장</h1>
+        <h1>북클럽</h1>
         <p class="gate-sub">4자리 번호를 입력해서 들어가세요</p>
         <form id="pin-form" novalidate>
           <input class="pin-input" id="pin-input" inputmode="numeric" maxlength="4" autocomplete="off" placeholder="••••" />
